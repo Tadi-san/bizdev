@@ -4,7 +4,7 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-
+import eng from "./lang"
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
@@ -42,16 +42,15 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="md:flex justify-around items-start my-12 md:my-12 py-24 gap-4 relative"
     >
       <div className="bg- from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10 ">
-        <h5 className="text-xl font-bold text-black my-2">
-          Contact Us
+      <div className=" ">
+        <h5 className=" text-4xl font-bold text-black my-2">
+          {eng.contact}
         </h5>
         <p className="text-slate-800 mb-4 max-w-md">
-          {" "}
-          You can contact us thorough every social media, choose what ever makes you comfortable 🙂 
+           {eng.contactDesc}
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="github.com" className=" ">
@@ -62,64 +61,62 @@ const EmailSection = () => {
           </Link>
         </div>
       </div>
-      <div>
+      <div className="w-full sm:w-fit">
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col justify-center items-center" onSubmit={handleSubmit}>
-            <div className="mb-6 flex flex-col justify-center items-center  w-full">
+          <form className="flex py-6 flex-col justify-center gap-8 mt-8 rounded-xl items-center border  md:w-[450px] " onSubmit={handleSubmit}>
+            <div className="mb-6 flex flex-col justify-center items-center w-full">
               <label
                 htmlFor="email"
-                className="text-black block mb-2 text-sm font-medium"
-              >
-                Your email
+                className="text-black  w-[90%] block text-start text-sm mb-2 font-medium">
+                {eng.email}
               </label>
               <input
                 name="email"
                 type="email"
                 id="email"
                 required
-                className="bg-slate-100 border border-[#33353F] placeholder-slate-600 text-gray-900 text-sm rounded-lg block w-3/5 p-2.5"
-                placeholder="jacob@google.com"
+                className=" border border-primary-200 placeholder-slate-600 text-gray-900 text-sm rounded-lg block w-[90%] p-2.5"
+                placeholder={eng.placeHolderEmail}
               />
             </div>
             <div className="mb-6 flex flex-col justify-center items-center  w-full">
               <label
                 htmlFor="subject"
-                className="text-black block text-sm mb-2 font-medium"
+                className="text-black  w-[90%] block text-start text-sm mb-2 font-medium"
               >
-                Subject
+                {eng.FullName}
               </label>
               <input
                 name="subject"
                 type="text"
                 id="subject"
                 required
-                className="bg-slate-100 border border-[#33353F] placeholder-slate-600 text-gray-900 text-sm rounded-lg block w-3/5 p-2.5"
-                 placeholder="Just saying hi"
+                className=" border border-primary-200 bg-white placeholder-slate-600 text-gray-900 text-sm rounded-lg block  w-[90%] p-2.5"
+                placeholder={eng.placeHolderName}
               />
             </div>
             <div className="mb-6 flex flex-col justify-center items-center  w-full">
               <label
                 htmlFor="message"
-                className="text-black block text-sm mb-2 font-medium"
-              >
-                Message
+                className="text-black  w-[90%] block text-start text-sm mb-2 font-medium">
+                {eng.Message}
               </label>
               <textarea
                 name="message"
                 id="message"
-                className="bg-slate-100 border border-[#33353F] placeholder-slate-600 text-gray-900 text-sm rounded-lg block w-3/5 p-2.5 h-36"
-                placeholder="Let's talk about..."
+                className="border border-primary-200 placeholder-slate-600 text-gray-900 text-sm rounded-lg block w-[90%] p-2.5 h-36"
+                placeholder={eng.placeHolderMessage}
               />
             </div>
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-3/5"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 w-[90%] rounded-lg "
             >
-              Send Message
+              {eng.SendMessage}
             </button>
           </form>
         )}

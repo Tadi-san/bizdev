@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-
+import eng from "./lang"
 const AnimatedNumbers = dynamic(
   () => {
     return import("react-animated-numbers");
@@ -11,29 +11,29 @@ const AnimatedNumbers = dynamic(
 
 const achievementsList = [
   {
-    metric: "Projects",
+    metric: eng.metricProjects,
     value: "100",
     postfix: "+",
   },
   {
     prefix: "~",
-    metric: "Clients",
+    metric: eng.metricClients,
     value: "80",
   },
   {
-    metric: "Awards",
+    metric: eng.metricAwards,
     value: "1",
   },
   {
-    metric: "Years",
+    metric: eng.metricYears,
     value: "2",
   },
 ];
 
 const AchievementsSection = () => {
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 w-full">
-      <div className="sm:border rounded-md border border-slate-200 py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
+    <div className="py-8 xl:gap-16 w-full">
+      <div className="sm:border rounded-md w-full border border-slate-200 py-8 px-16 flex items-center justify-around sm:justify-between">
         {achievementsList.map((achievement, index) => {
           return (
             <div

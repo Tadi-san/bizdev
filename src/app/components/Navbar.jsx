@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import eng from "./lang"
 
 const navLinks = [
   {
@@ -32,23 +33,23 @@ const Navbar = () => {
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-4xl text-black font-semibold"
+          className="text-2xl md:text-4xl text-primary-500 font-bold justify-center items-center rounded-full flex"
         >
-          LOGO
-        </Link>
+        Axis</Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <div className=" flex gap-1">
+            <select className=" p-1 bg-inherit text-black border cursor-pointer border-slate-500 rounded-md hover:border-slate-300">
+              <option>Amh</option>
+              <option>eng</option>
+        </select>
             <button
               onClick={() => setNavbarOpen(true)}
               className="flex items-center px-3 py-2 border rounded border-slate-700 text-slate-700 hover:text-slate-500 hover:border-slate-500"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
-            <select className=" p-1 bg-inherit text-black border cursor-pointer border-slate-500 rounded-md hover:border-slate-300">
-              <option>Amh</option>
-              <option>eng</option>
-        </select>
+            
             </div>
           ) : (
             <button

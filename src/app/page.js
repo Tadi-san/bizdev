@@ -10,11 +10,13 @@ import Calculator from "./components/claculator";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-white scroll-smooth">
-      <Navbar className=' z-10' />
-      <div className="container mt-24 mx-auto px-12 py-4 z-0">
-        <HeroSection />
-        <AchievementsSection />
-        <AboutSection />
+      <Navbar className=' ' />
+      <div className="container mt-24 mx-auto sm:px-12 px-5 py-4">
+        <HeroSection />        
+      </div>
+      <AchievementsSection />
+      <div className="container mt-24 mx-auto sm:px-12 px-5 py-4">
+      <AboutSection />
         <ProjectsSection />
         <Calculator />
         <EmailSection />

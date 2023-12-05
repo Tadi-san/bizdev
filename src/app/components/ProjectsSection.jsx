@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
-
+import eng from "./lang"
 const projectsData = [
   {
     id: 1,
@@ -88,17 +88,17 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="All"
-          isSelected={tag === "All"}
+          isSelected={tag === eng.tagAll}
         />
         <ProjectTag
           onClick={handleTagChange}
           name="Web"
-          isSelected={tag === "Web"}
+          isSelected={tag === eng.tagWeb}
         />
         <ProjectTag
           onClick={handleTagChange}
           name="Mobile"
-          isSelected={tag === "Mobile"}
+          isSelected={tag === eng.tagMobile}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
